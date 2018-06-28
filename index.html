@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--google meta-->
+  <meta name="google-signin-client_id" content="179726082423-7b13kuhdrnn8knjf97jffbhs6i2c76df.apps.googleusercontent.com">
   <title>LOGIN</title>
   <!--css files-->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -16,6 +18,8 @@
     crossorigin="anonymous">
   <!--google fonts-->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <!--GOOGLE API-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!-- Favicon and touch icons-->
   <link rel="shortcut icon" href="assets/ico/favicon.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-114-precomposed.png">
@@ -39,6 +43,9 @@
               <p>
                 <strong>TOGETHER IS BETTER</strong>
               </p>
+              <h1 id="name"></h1>
+              <h2 id="email"></h2>
+              <img id="photo" src="" alt="">
             </div>
           </div>
         </div>
@@ -49,9 +56,11 @@
               <a class="btn btn-link-1 btn-link-1-facebook" href="#">
                 <i class="fab fa-facebook"></i> Facebook
               </a>
-              <a id= "google" class="btn btn-link-1 btn-link-1-google-plus" href="#">
+              <!-- <a id= "google" class="btn btn-link-1 btn-link-1-google-plus" href="#">
                 <i class="fab fa-google-plus"></i> Google Plus
-              </a>
+              </a> -->
+              <div id="google" class="g-signin2" data-onsuccess="onSignIn"></div>
+              <div class="name"></div>
             </div>
           </div>
         </div>
@@ -61,13 +70,17 @@
   </div>
   
   <!--FIREBASE-->
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script> -->
   <!--JavaScript Files-->
-  <script src="js/vendors/jquery-3.3.1.js"></script>
+  <script
+   src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+  </script>
+  <!-- <script src="js/vendors/jquery-3.3.1.js"></script> -->
   <script src="js/vendors/bootstrap.min.js"></script>
   <script src="js/vendors/jquery.backstretch.min.js"></script>
   <script src="js/vendors/scripts.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/profile.js"></script>
 
 </body>
 

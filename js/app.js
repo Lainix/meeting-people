@@ -1,56 +1,40 @@
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBYF8vLyCdg3zReb6KENA6M4Txp_COX8fM",
-    authDomain: "plusone-b5241.firebaseapp.com",
-    databaseURL: "https://plusone-b5241.firebaseio.com",
-    projectId: "plusone-b5241",
-    storageBucket: "plusone-b5241.appspot.com",
-    messagingSenderId: "437981876140"
-  };
-  firebase.initializeApp(config);
+
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  // var name =profile.getName();
+  // var email = profile.getEmail();
+  // var imageUser = profile.getImageuRL();
+  // var myStorage = window.localStorage;
+  // console.log(myStorage);
+  // console.log("juan"+name);
+  // window.location.href = "../views/main.html";
+  var name = profile.getName();
+  var photo = profile.getImageUrl();
+  var email = profile.getEmail();
+
+  $("#name").append(name);
+  $("#email").append(email);
+  $("#photo").attr("src",photo);
+
+  // console.log("juanito" + name, photo, email);
+  // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  // console.log('Name: ' + profile.getName());
+  // console.log('Image URL: ' + profile.getImageUrl());
+  // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+    window.location.href = "../index.html";
+  });
+}
 
 
 
-  $(document).ready(function () {
 
-    $("#google").click(function () {
-      console.log("Boton login clicleado");
 
-      var provider = new firebase.auth.GoogleAuthProvider();
 
-      firebase.auth().signInWithPopup(provider).then(function (result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-        console.log(user);
-      }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-        console.log(errorCode, errorMessage);
-      });
-
-      firebase.auth().onAuthStateChanged(function(user) {//lo del objeto
-        console.log("checking login state");
-        if(user) {
-            console.log("logged in");
-            
-            window.location = "../views/main.html";
-        } else  {
-            console.log("logged out");
-            $("#user").text("");
-        }
-    });
-
-  })
-
-});
 
