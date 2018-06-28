@@ -1,77 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Main</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="../css/vendors/bootstrap.min.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
-<body>
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-auto ml-0 logo ml-md-4">
-                    <a href="#">
-                        <img src="../assets/images/+1circle.png" width="60" height="60">
-                    </a>
-                </div>
-                <div class="col-6 col-sm-8 col-lg-6 mt-2">
-                    <div class="row no-gutters">
-                        <div class="col-10">
-                            <P class="h2 text-white">PlusOne</P>
-                        </div>
-                    </div>
-                </div>
-                <nav class="col-lg-2 menu d-flex justify-content-between ml-5 mt-2 ml-lg-auto">
-                    <a class="d-lg-block" href="#">
-                        <i class="fas fa-home"></i>
-                    </a>
-                    <a class=" d-lg-block" href="#">
-                        <i class="fas fa-user-friends"></i>
-                    </a>
-                    <a class=" d-lg-block" href="#">
-                        <i class="fas fa-bell"></i>
-                    </a>
-                    <a class=" d-lg-block" href="#" class="imagen">
-                        <img class="usuario" src="../assets/images/chris.jpg" width="40" height="40"
-                        alt="usuario">
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <main>
 
-      <section>
-        <!--BUSQUEDA-->
-        <form>
-          <input id="search-text" type="text">
-          <button id="search-button" type="button">Buscar</button>
-        </form>
-  
-        <div id="characters-container"></div>
-  
-        <div id="template-character" style="display:none">
-          <div>
-            <h2>
-              <a href="{{url}}"></a>{{name}}</h2>
-            <p>{{description}}</p>
-            <img style="width:100%" src="{{profile}}" />
+<body>
+  <header>
+    <!-- Nav -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-auto ml-0 logo ml-md-4">
+          <a href="#">
+            <img src="../assets/images/+1circle.png" width="60" height="60">
+          </a>
+        </div>
+        <div class="col-6 col-sm-8 col-lg-6 mt-2">
+          <div class="row no-gutters">
+            <div class="col-10">
+              <P class="h2 text-white">PlusOne</P>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+        <nav class="col-lg-2 menu d-flex justify-content-between ml-5 mt-2 ml-lg-auto">
+          <a class="d-lg-block" href="#">
+            <i class="fas fa-home"></i>
+          </a>
+          <a class=" d-lg-block" href="#">
+            <i class="fas fa-user-friends"></i>
+          </a>
+          <a class=" d-lg-block" href="#">
+            <i class="fas fa-bell"></i>
+          </a>
+          <a class=" d-lg-block" href="#" class="imagen">
+            <img class="usuario" src="../assets/images/chris.jpg" width="40" height="40" alt="usuario">
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Profile -->
+  <main class="profile">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="tarjeta">
+          <div class="imagen">
+            <img src="../assets/Cornell.jpg" alt="">
+            <h5 class="">Chris Cornell</h5>
+          </div>
+          <div class="raiting offset-md-3 col-12 col-md-6 col-12 col-md-6">
+            <i class="estrellita fas fa-star"></i>
+            <i class="estrellita fas fa-star"></i>
+            <i class="estrellita fas fa-star"></i>
+            <i class="estrellita fas fa-star-half-alt"></i>
+            <i class=estrellita "far fa-star"></i>
+          </div>
+          <div class="description offset-md-3 col-12 col-md-6">
+            <h6>intereses</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis placeat totam doloribus rerum! Quia
+              culpa nostrum suscipit possimus ab natus adipisci non fuga magnam! Necessitatibus vel accusamus possimus ea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <!-- TexArea -->
+      
+      <!--BUSQUEDA-->
+      <form>
+        <input id="search-text" type="text">
+        <button id="search-button" type="button">Buscar</button>
+      </form>
 
-  
+      <div id="characters-container"></div>
+
+      <div id="template-character" style="display:none">
+        <div>
+          <h2>
+            <a href="{{url}}"></a>{{name}}</h2>
+          <p>{{description}}</p>
+          <img style="width:100%" src="{{profile}}" />
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- TexArea -->
-  
+
   <!-- Post Area -->
-  
+
   <link rel="stylesheet" href="../vendors/bootstrap.min.css">
   <script src="../js/app.js"></script>
 </body>
+
 </html>
