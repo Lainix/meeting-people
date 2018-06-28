@@ -9,22 +9,26 @@
   };
   firebase.initializeApp(config);
 
-  
+
 
   $(document).ready(function () {
-    var provider = new firebase.auth.GoogleAuthProvider();
 
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+    $("#google").click(function () {
+      console.log("Boton login clicleado");
+
+      var provider = new firebase.auth.GoogleAuthProvider();
+
+      firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
         // ...
         console.log(user);
-      }).catch(function(error) {
+      }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
-    
+
         var errorMessage = error.message;
         // The email of the user's account used.
         var email = error.email;
@@ -34,5 +38,19 @@
         console.log(errorCode, errorMessage);
       });
 
-  });
+      firebase.auth().onAuthStateChanged(function(user) {//lo del objeto
+        console.log("checking login state");
+        if(user) {
+            console.log("logged in");
+            
+            window.location = "../views/main.html";
+        } else  {
+            console.log("logged out");
+            $("#user").text("");
+        }
+    });
+
+  })
+
+});
 
